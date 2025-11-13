@@ -1,9 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils.encrypt import caesar_encrypt, fence_encrypt, fence_decrypt
+from utils.encrypt import caesar_encrypt, fence_encrypt, fence_decrypt, write_endpoint
 app= FastAPI()
-path_names = "names.txt"
+
+path_names = "data/names.txt"
 
 # mode = "encrypt" | "decrypt"
 
@@ -15,6 +16,8 @@ class DataCaesar(BaseModel):
 class DataFence(BaseModel):
     text: str
     
+
+
 @app.get("/test")
 def test():
     return { "msg": "hi from test"}

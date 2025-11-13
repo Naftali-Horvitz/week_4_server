@@ -1,4 +1,4 @@
-
+path = 'data/endpoints_data.json'
 
 def caesar_encrypt(text: str, offset: str, mode: str):
     result = ""
@@ -37,7 +37,7 @@ def fence_decrypt(text:str):
         result = fence_encrypt(result)
     return result
 
-# print(fence_encrypt("ab ac a"))
-print(fence_encrypt("hi there1"))
-print(fence_decrypt("hteeihr1"))
-# print(caesar_encrypt('bc', 2, "decrypt"))
+
+def write_endpoint(data):
+    with open(path, 'a') as f:
+        data
